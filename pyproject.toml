@@ -1,0 +1,9 @@
+[project]
+name = "jmp"
+version = "0.0.1"
+
+[tool.pyright]
+deprecateTypingAliases = true
+strictListInference = true
+strictDictionaryInference = true
+strictSetInference = true
