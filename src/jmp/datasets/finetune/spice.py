@@ -143,6 +143,9 @@ class SPICE(LmdbDataset[T]):
                         np.array(_assert_dataset(mol.get("conformations"))[conf_idx])
                     ).float()  # n_atoms 3
 
+                    # Fix force sign. See https://github.com/facebookresearch/JMP/issues/1#issue-2341357453 for details
+                    force = -force
+
                     data_object = Data(
                         atomic_numbers=atomic_numbers,
                         pos=pos,
